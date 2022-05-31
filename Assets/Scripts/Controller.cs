@@ -10,7 +10,8 @@ public class Controller : MonoBehaviour
     public float jumpSpeed;
     private float gravity=-20;
     private int lane = 1;
-    private int level=0;
+    // private int level=0;
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -54,5 +55,13 @@ public class Controller : MonoBehaviour
             targetPosition+=Vector3.right*(float)2.5;
         }
         transform.position=targetPosition;      
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if(hit.transform.tag == "obstacle")
+        {
+            PlayerManager.gameOver = false;
+        }
     }
 }
