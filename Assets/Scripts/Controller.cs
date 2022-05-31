@@ -11,7 +11,7 @@ public class Controller : MonoBehaviour
     private float gravity=-20;
     private int lane = 1;
     // private int level=0;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,7 +61,7 @@ public class Controller : MonoBehaviour
     {
         if(hit.transform.tag == "obstacle")
         {
-            PlayerManager.gameOver = false;
+            PlayerManager.gameOver = true;
         }
     }
 }

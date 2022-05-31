@@ -5,12 +5,13 @@ using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
 {
-    public static bool gameOver = false;
-    public GameObject gameoverpanel;
+    public static bool gameOver;
+    public GameObject GameOverPanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+        gameOver = false;
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -18,12 +19,9 @@ public class PlayerManager : MonoBehaviour
     {
         if(gameOver==true)
         {
-            gameoverpanel.SetActive(true);
+            GameOverPanel.SetActive(true);
+            Time.timeScale = 0;
+           
         }
-    }
-
-    internal static void isPlaying(bool v)
-    {
-        throw new NotImplementedException();
     }
 }
