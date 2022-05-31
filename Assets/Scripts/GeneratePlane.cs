@@ -9,7 +9,7 @@ public class GeneratePlane : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        int n = Random.Range(6,10);
+        int n = Random.Range(6,11);
         for(int i=0;i<n;i++)
         {
             drawPlane(i*20);
