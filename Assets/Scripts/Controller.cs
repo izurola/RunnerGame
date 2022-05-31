@@ -7,8 +7,10 @@ public class Controller : MonoBehaviour
     private CharacterController controller;
     private Vector3 direction;
     public float speed;
+    public float jumpSpeed;
+    private float gravity=-20;
     private int lane = 1;
-    public int level=0;
+    private int level=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +23,8 @@ public class Controller : MonoBehaviour
         direction.z=speed;
         controller.Move(direction*Time.deltaTime);
         
+        direction.y+=gravity*Time.deltaTime;
+
         if(Input.GetKeyDown(KeyCode.RightArrow))
         {
             if(lane<2)
@@ -34,7 +38,12 @@ public class Controller : MonoBehaviour
             {
                 lane--;
             }
-        }   
+        }
+        if(Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            if(controller.isGrounded)
+            direction.y=jumpSpeed;
+        }
         Vector3 targetPosition = transform.position.z*transform.forward+transform.position.y*transform.up;
         if(lane==0)
         {
@@ -44,7 +53,6 @@ public class Controller : MonoBehaviour
         {
             targetPosition+=Vector3.right*(float)2.5;
         }
-        transform.position=targetPosition;
-        
+        transform.position=targetPosition;      
     }
 }
