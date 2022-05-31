@@ -6,11 +6,14 @@ using UnityEngine;
 public class PlayerManager : MonoBehaviour
 {
     public static bool gameOver;
+    public static bool GameStarted;
     public GameObject GameOverPanel;
+
     // Start is called before the first frame update
     void Start()
     {
         gameOver = false;
+        GameStarted = false;
         Time.timeScale = 1;
     }
 
@@ -21,7 +24,6 @@ public class PlayerManager : MonoBehaviour
         {
             GameOverPanel.SetActive(true);
             Time.timeScale = 0;
-           
         }
     }
 }
