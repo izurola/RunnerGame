@@ -13,6 +13,7 @@ public static bool swipedRight = false;
 public static bool swipedLeft = false;
 public static bool swipedUp = false;
 public static bool swipedDown = false;
+public static bool tap = false;
 static bool swiped;
 
 
@@ -34,10 +35,11 @@ public void Update()
 	swipedLeft = false;
 	swipedUp = false;
 	swipedDown = false;
-
+	tap=false;
 	if(Input.touches.Length > 0)
 	{
 		Touch t = Input.GetTouch(0);
+		tap=true;
 		if(t.phase == TouchPhase.Began)
 		{
 			startPos = new Vector2(t.position.x/(float)Screen.width, t.position.y/(float)Screen.width);

@@ -21,6 +21,10 @@ public class Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(!PlayerManager.GameStarted)
+        {
+            return;
+        }
         direction.z=speed;
         controller.Move(direction*Time.deltaTime);
         
@@ -65,8 +69,10 @@ public class Controller : MonoBehaviour
         Vector3 temp = new Vector3(1,0.5f,1);
         Vector3 temp1 = transform.localScale;
         transform.localScale=temp;
+        gravity=-40;
         yield return new WaitForSecondsRealtime(0.5f);
         transform.localScale=temp1;
+        gravity=-20;
     }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {

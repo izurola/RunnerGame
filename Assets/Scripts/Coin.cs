@@ -20,6 +20,7 @@ public class Coin : MonoBehaviour
             if(other.gameObject.name=="Player")
             {
                 Destroy(gameObject);
+                PlayerManager.Coins++;
             }
         }
 }
