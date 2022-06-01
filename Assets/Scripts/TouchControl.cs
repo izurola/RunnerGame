@@ -58,11 +58,9 @@ public void Update()
 			if (Mathf.Abs (swipe.x) > Mathf.Abs (swipe.y)) { 
 				if (swipe.x > 0) {
 					swiped = swipedRight = true;
-                    Debug.Log("right");
 				}
 				else {
 					swiped = swipedLeft = true;
-                    Debug.Log("left");
 				}
 			}
 			else { 

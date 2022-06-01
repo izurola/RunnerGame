@@ -45,6 +45,10 @@ public class Controller : MonoBehaviour
             if(controller.isGrounded)
             direction.y=jumpSpeed;
         }
+        if(TouchControl.swipedDown)
+        {
+            StartCoroutine(sliding());
+        }
         Vector3 targetPosition = transform.position.z*transform.forward+transform.position.y*transform.up;
         if(lane==0)
         {
@@ -56,7 +60,14 @@ public class Controller : MonoBehaviour
         }
         transform.position=targetPosition;      
     }
-
+    IEnumerator sliding()
+    {
+        Vector3 temp = new Vector3(1,0.5f,1);
+        Vector3 temp1 = transform.localScale;
+        transform.localScale=temp;
+        yield return new WaitForSecondsRealtime(0.5f);
+        transform.localScale=temp1;
+    }
     private void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if(hit.transform.tag == "obstacle")
