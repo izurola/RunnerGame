@@ -12,14 +12,13 @@ public class Coin : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-            transform.Rotate(40*Time.deltaTime,0,0);
+            transform.Rotate(40*Time.deltaTime,40*Time.deltaTime,40*Time.deltaTime);
         }
         
         private void OnTriggerEnter(Collider other)
         {
             if(other.gameObject.name=="Player")
             {
-                // PlayerManager.winRound=true;
                 Destroy(gameObject);
                 PlayerManager.Coins++;
             }

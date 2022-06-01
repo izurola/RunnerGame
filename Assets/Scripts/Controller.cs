@@ -70,7 +70,7 @@ public class Controller : MonoBehaviour
         Vector3 temp1 = transform.localScale;
         transform.localScale=temp;
         gravity=-40;
-        yield return new WaitForSecondsRealtime(0.5f);
+        yield return new WaitForSecondsRealtime(0.8f);
         transform.localScale=temp1;
         gravity=-20;
     }
