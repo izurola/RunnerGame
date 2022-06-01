@@ -19,6 +19,7 @@ public class Coin : MonoBehaviour
         {
             if(other.gameObject.name=="Player")
             {
+                // PlayerManager.winRound=true;
                 Destroy(gameObject);
                 PlayerManager.Coins++;
             }

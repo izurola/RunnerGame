@@ -13,4 +13,9 @@ public class Events : MonoBehaviour
     {
         Application.Quit();
     }
+    public void NextLevel()
+    {
+        PlayerManager.Levels++;
+        SceneManager.LoadScene("Level");
+    }
 }
