@@ -26,21 +26,21 @@ public class Controller : MonoBehaviour
         
         direction.y+=gravity*Time.deltaTime;
 
-        if(Input.GetKeyDown(KeyCode.RightArrow))
+        if(TouchControl.swipedRight)
         {
             if(lane<2)
             {
                 lane++;
             }
         }
-        if(Input.GetKeyDown(KeyCode.LeftArrow))
+        if(TouchControl.swipedLeft)
         {
             if(lane>0)
             {
                 lane--;
             }
         }
-        if(Input.GetKeyDown(KeyCode.UpArrow))
+        if(TouchControl.swipedUp)
         {
             if(controller.isGrounded)
             direction.y=jumpSpeed;
