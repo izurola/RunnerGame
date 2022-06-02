@@ -13,6 +13,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject WinRoundPanel;
     public static int Coins=0;
     public static int Levels=1;
+    public static int TotalCoin=0;
     public Text coinText;
     public Text levelText;
 
@@ -30,6 +31,7 @@ public class PlayerManager : MonoBehaviour
     {
         if(gameOver==true)
         {
+            Coins=TotalCoin;
             GameOverPanel.SetActive(true);
             Time.timeScale = 0;
         }
@@ -42,8 +44,9 @@ public class PlayerManager : MonoBehaviour
         }
         if(winRound)
         {
-            WinRoundPanel.SetActive(true);
+            TotalCoin=Coins;
             Time.timeScale = 0;
+            WinRoundPanel.SetActive(true);
         }
     }
 }

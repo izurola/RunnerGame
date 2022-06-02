@@ -113,7 +113,11 @@ public class GeneratePlane : MonoBehaviour
                     int coinPerSpawn = Random.Range(2,5);
                     poss = posForCube;
                     poss.x=line;
-                    poss.z=(i*20)-6;
+                    if(k==0)
+                        poss.z=(i*20)-6;
+                    else 
+                        poss.z=(i*20)+6;
+                    
                     while(coinPerSpawn>0)
                     {
                         Instantiate(obstacle[4],poss,transform.rotation);

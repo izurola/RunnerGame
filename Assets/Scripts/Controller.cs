@@ -15,6 +15,7 @@ public class Controller : MonoBehaviour
     void Start()
     {
         controller = GetComponent<CharacterController>();
+        speed+=PlayerManager.Levels/10;
     }
 
     // Update is called once per frame
