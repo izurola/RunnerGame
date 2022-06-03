@@ -12,7 +12,7 @@ public class PlayerManager : MonoBehaviour
     public GameObject StartingText; 
     public GameObject WinRoundPanel;
     public static int Coins=0;
-    public static int Levels=1;
+    public static int Levels=100;
     public static int TotalCoin=0;
     public Text coinText;
     public Text levelText;

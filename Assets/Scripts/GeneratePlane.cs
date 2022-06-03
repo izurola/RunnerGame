@@ -11,9 +11,10 @@ public class GeneratePlane : MonoBehaviour
     Vector3 posForHole = new Vector3(0,0,0);
     Vector3 posForCaps = new Vector3(0,1,0);
     Vector3 posForCube = new Vector3(0,0.5f,0);
-    Vector3 posForHeadObs = new Vector3(0,2.5f,0);
+    Vector3 posForHeadObs = new Vector3(0,2.25f,0);
     Vector3 posForEnding = new Vector3(0,0.01f,0);
     public int n;
+    public static int endingPoint;
     private int previousLine=0;
     // Start is called before the first frame update
     void Start()
@@ -53,7 +54,7 @@ public class GeneratePlane : MonoBehaviour
         }
         else if(i==n-1)
         {
-            int endingPoint=(n-1)*20+9;
+            endingPoint=(n-1)*20+9;
             posForEnding.z=endingPoint;
             Instantiate(ending,posForEnding,transform.rotation);
         }

@@ -25,6 +25,10 @@ public class Controller : MonoBehaviour
         {
             return;
         }
+        if(GeneratePlane.endingPoint<=transform.position.z)
+        {
+            PlayerManager.winRound=true;
+        }
         direction.z=speed;
         controller.Move(direction*Time.deltaTime);
         
