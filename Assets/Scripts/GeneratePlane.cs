@@ -39,6 +39,8 @@ public class GeneratePlane : MonoBehaviour
     {
         pos.z=i*20;
         Instantiate(ground,pos,transform.rotation);
+        pos.z=-20;
+        Instantiate(ground,pos,transform.rotation);
         if(i==0)
         {
             int beginningPoint=-7;
